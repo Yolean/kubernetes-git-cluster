@@ -2,7 +2,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: datadir-git-0
+  name: datadir-gogs-0
   namespace: git
 spec:
   accessModes:
@@ -13,4 +13,5 @@ spec:
   selector:
     matchLabels:
       app: git
+      service: gogs
       petindex: "0"
