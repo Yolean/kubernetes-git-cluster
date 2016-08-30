@@ -23,6 +23,6 @@ services:
       - gogs-1
     environment:
       - GOGS_LEADER=http://gogs-0:3000/api/v1
-      - GOGS_LEADER_TOKEN=
+      - GOGS_LEADER_TOKEN=43f6a100e5f95ad3f7ee7c7661d658078ecdcd92
       - GOGS_FOLLOWER=http://gogs-1:3000/api/v1
-      - GOGS_FOLLOWER_TOKEN=
+      - GOGS_FOLLOWER_TOKEN=aa655a640f9729530ba5dd321a7f8059affdd582
