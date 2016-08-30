@@ -1,0 +1,24 @@
+version: '2'
+services:
+  gogs-0:
+    image: gogs/gogs
+    ports:
+     - "3000:3000"
+    volumes:
+     - ./testdata-gogs-0:/data
+  gogs-1:
+    image: gogs/gogs
+    ports:
+     - "3001:3000"
+    volumes:
+     - ./testdata-gogs-1:/data
+  cluster-admin:
+    build: ../node-gogs-cluster
+    links:
+      - gogs-0
+      - gogs-1
+    environment:
+      - GOGS_LEADER=http://gogs-0:3000/api/v1
+      - GOGS_LEADER_TOKEN=
+      - GOGS_FOLLOWER=http://gogs-1:3000/api/v1
+      - GOGS_FOLLOWER_TOKEN=
