@@ -4,3 +4,7 @@ testdata-gogs-0/gogs/data/avatars
 testdata-gogs-1/gogs/data/avatars
 testdata-gogs-0/ssh
 testdata-gogs-1/ssh
+testdata-gogs-0/gogs/data/data
+testdata-gogs-1/gogs/data/data
+testdata-gogs-0/gogs/data/sessions
+testdata-gogs-1/gogs/data/sessions
