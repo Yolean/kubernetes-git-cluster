@@ -2,3 +2,5 @@ testdata-gogs-0/gogs/log
 testdata-gogs-1/gogs/log
 testdata-gogs-0/gogs/data/avatars
 testdata-gogs-1/gogs/data/avatars
+testdata-gogs-0/ssh
+testdata-gogs-1/ssh
