@@ -6,12 +6,16 @@ services:
      - "3000:3000"
     volumes:
      - ./testdata-gogs-0:/data
+    environment:
+     - SOCAT_LINK=false
   gogs-1:
     image: gogs/gogs
     ports:
      - "3001:3000"
     volumes:
      - ./testdata-gogs-1:/data
+    environment:
+     - SOCAT_LINK=false
   cluster-admin:
     build: ../node-gogs-cluster
     links:
