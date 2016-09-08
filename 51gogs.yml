@@ -1,29 +1,32 @@
 apiVersion: apps/v1alpha1
 kind: PetSet
 metadata:
-  name: persistent
+  name: gogs
   namespace: git
 spec:
-  serviceName: persistent
+  serviceName: gogs
   replicas: 1
   template:
     metadata:
       labels:
-        app: git
+        app: gogs
       annotations:
         pod.alpha.kubernetes.io/initialized: "true"
         pod.alpha.kubernetes.io/init-containers: '[
         ]'
     spec:
       containers:
-      - name: git-httpd
-        image: local/yolean/git-httpd
+      - name: gogs
+        image: gogs/gogs
         ports:
-        - containerPort: 80
+        - containerPort: 3000
           name: http
         volumeMounts:
         - name: datadir
-          mountPath: /opt/git
+          mountPath: /data
+        env:
+        - name: SOCAT_LINK
+          value: "false"
   volumeClaimTemplates:
   - metadata:
       name: datadir
