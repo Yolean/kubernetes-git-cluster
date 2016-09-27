@@ -6,9 +6,12 @@ metadata:
     app: drone
     component: server
 spec:
+  selector:
+    app: drone
+    component: server
   ports:
     - name: http
       port: 80
       protocol: TCP
-  # temporarily, for local testing only
+  # for local testing
   type: NodePort

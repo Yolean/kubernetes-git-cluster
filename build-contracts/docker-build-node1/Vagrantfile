@@ -25,12 +25,11 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 4243, host: 34243
   # ...
   #  - let's you access http://10.0.2.2:34243/ in a virtualbox Minikube vm
-  #  - docker run -ti --entrypoint /bin/bash --rm solsson/build-contract
+  #  - docker run --rm -ti --entrypoint /bin/bash -e DOCKER_HOST=tcp://10.0.2.2:34243 solsson/build-contract
   #    - echo "FROM debian:jessie" > Dockerfile
-  #    - docker -H tcp://10.0.2.2:34243/ build .
+  #    - docker build .
   #    - echo -e "version: '2'\nservices:\n  test1:\n    build: .\n    entrypoint: 'echo test1'\n" > docker-compose.yml
-  #    - docker-compose -H tcp://10.0.2.2:34243/ up --build
-  #    (issue: gets ERROR: network create not found)
+  #    - docker-compose -H up --build
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
