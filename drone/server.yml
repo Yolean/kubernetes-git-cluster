@@ -19,7 +19,7 @@ spec:
             - name: DRONE_SERVER_ADDR
               value: ":80"
             - name: DRONE_SECRET
-              value: 37RdNTxwMBzMtdceZzpQGwhVyxUpGLd5uYQ6QWxiXbTynLxjUh
+              value: 37RdNTxw
             - name: DRONE_DATABASE_DRIVER
               value: sqlite3
             - name: DRONE_DATABASE_DATASOURCE
@@ -30,6 +30,10 @@ spec:
             - name: DRONE_GOGS_URL
               value: "http://gogs-0.git.svc.cluster.local:3000/"
             - name: DRONE_DEBUG
+              value: "true"
+            - name: DRONE_OPEN
+              value: "true"
+            - name: DRONE_ADMIN_ALL
               value: "true"
           ports:
             - containerPort: 80
