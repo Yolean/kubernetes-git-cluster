@@ -25,6 +25,10 @@ spec:
             - name: DRONE_DATABASE_DATASOURCE
               #value: /drone.sqlite
               value: ":memory:"
+            - name: DRONE_GOGS
+              value: "true"
+            - name: DRONE_GOGS_URL
+              value: "http://gogs-0.git.svc.cluster.local:3000/"
             - name: DRONE_DEBUG
               value: "true"
           ports:
