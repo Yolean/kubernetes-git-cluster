@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  # This'll be gogs-0.git instead of petset's gogs-0.gogs.git
+  # But note that without PetSet this won't match the container's hostname
+  name: gogs-0
+  labels:
+    app: gogs
+    instance: "0"
+spec:
+  selector:
+    app: gogs
+    instance: "0"
+  ports:
+    - port: 3000
+      name: http
+  # to run installer, needed unless ini is mounted
+  #type: NodePort

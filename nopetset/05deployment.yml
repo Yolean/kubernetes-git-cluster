@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: gogs-0
+  namespace: git
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: gogs
+        instance: "0"
+    spec:
+      containers:
+        - name: gogs
+          image: gogs/gogs
+          ports:
+            - containerPort: 3000
+              name: http
+          env:
+            - name: SOCAT_LINK
+              value: "false"
+          ports:
+            - containerPort: 3000
+              protocol: TCP
