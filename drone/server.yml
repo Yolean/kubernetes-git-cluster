@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: server
+  namespace: drone
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: drone
+        component: server
+    spec:
+      containers:
+        - image: drone/drone:0.5
+          imagePullPolicy: Always
+          name: drone-server
+          env:
+            - name: DRONE_SERVER_ADDR
+              value: ":80"
+            - name: DRONE_SECRET
+              value: 37RdNTxwMBzMtdceZzpQGwhVyxUpGLd5uYQ6QWxiXbTynLxjUh
+            - name: DRONE_DATABASE_DRIVER
+              value: sqlite3
+            - name: DRONE_DATABASE_DATASOURCE
+              #value: /drone.sqlite
+              value: ":memory:"
+            - name: DRONE_DEBUG
+              value: "true"
+          ports:
+            - containerPort: 80
+              protocol: TCP
