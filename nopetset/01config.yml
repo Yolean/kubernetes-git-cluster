@@ -10,6 +10,5 @@ data:
     DB_TYPE = sqlite
     PATH = data/gogs.db
     [server]
-    ROOT_URL = http://gogs-0.git:3000/
     OFFLINE_MODE = true
     DISABLE_SSH = true
