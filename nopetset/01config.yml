@@ -12,3 +12,9 @@ data:
     [server]
     OFFLINE_MODE = true
     DISABLE_SSH = true
+    DISABLE_REGISTRATION = true
+    [service]
+    ENABLE_REVERSE_PROXY_AUTHENTICATION = true
+    ENABLE_REVERSE_PROXY_AUTO_REGISTRATION = true
+    [security]
+    REVERSE_PROXY_AUTHENTICATION_USER = X-Perimeter-User

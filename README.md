@@ -17,3 +17,8 @@ There's an experimental setup in `build-contracts/`:
  * Visit `http://localhost:30080/headerscheck/` to see that your username is passed on as header.
  * Visit `http://gogsleader:30080/` to create a repository on the master (you need a hosts file entry for your docker machine, something like `127.0.0.1	gogsleader`).
  * Visit `http://localhost:30080/` to create a "Migration" with the `mirror` option enabled.
+
+[gogs-migrate](https://github.com/valeriangalliat/gogs-migrate) is an interesting attempt to "mirror all your repositories".
+
+In Kubernetes, as described in https://github.com/gogits/gogs/issues/3476#issuecomment-250406873,
+the best we can do is manually maintained mirrors that update every minute.
