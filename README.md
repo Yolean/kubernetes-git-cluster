@@ -15,5 +15,5 @@ Ideas:
 There's an experimental setup in `build-contracts/`:
  * Run `docker-compose up`
  * Visit `http://localhost:30080/headerscheck/` to see that your username is passed on as header.
- * Visit `http://localhost:30080/gogsmaster/` to create a repository on the master.
+ * Visit `http://localhost:30080/gogsleader/` to create a repository on the master.
  * Visit `http://localhost:30080/` to create a "Migration" with the `mirror` option enabled.
