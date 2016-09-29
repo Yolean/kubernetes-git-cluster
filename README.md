@@ -10,4 +10,10 @@ Ideas:
 
 ## Gogs
 
-[Gogs](https://gogs.io/) has a [migrate](https://github.com/gogits/go-gogs-client/wiki/Repositories#migrate) with `mirror` feature that could provide basic synchronization. The problem is that it's one-way, and runs on timer instead of hooks.
+[Gogs](https://gogs.io/) has a [migrate](https://github.com/gogits/go-gogs-client/wiki/Repositories#migrate) with `mirror` feature that could provide basic synchronization. It also supports auto-creating users from proxy headers, https://github.com/gogits/gogs/issues/165, so databases wouldn't have to be in sync. The problem is that "mirror" is one-way, and runs on timer instead of hooks, as tracked in https://github.com/gogits/gogs/issues/3476.
+
+There's an experimental setup in `build-contracts/`:
+ * Run `docker-compose up`
+ * Visit `http://localhost:30080/headerscheck/` to see that your username is passed on as header.
+ * Visit `http://localhost:30080/gogsmaster/` to create a repository on the master.
+ * Visit `http://localhost:30080/` to create a "Migration" with the `mirror` option enabled.
