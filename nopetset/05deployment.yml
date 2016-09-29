@@ -23,3 +23,10 @@ spec:
           ports:
             - containerPort: 3000
               protocol: TCP
+          volumeMounts:
+            - name: config-volume
+              mountPath: /data/gogs/conf
+      volumes:
+        - name: config-volume
+          configMap:
+            name: gogs-0-custom
