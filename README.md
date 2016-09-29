@@ -8,9 +8,6 @@ Ideas:
  * https://github.com/solsson/docker-httpd/tree/master/git
  * https://github.com/kakwa/git-create.cgi
 
-## Building containers locally
+## Gogs
 
-Go to your kubernetes host, like minikube, cd to your dev folder, then:
-```
-docker build -t local/yolean/git-httpd git-httpd/
-```
+[Gogs](https://gogs.io/) has a [migrate](https://github.com/gogits/go-gogs-client/wiki/Repositories#migrate) with `mirror` feature that could provide basic synchronization. The problem is that it's one-way, and runs on timer instead of hooks.
